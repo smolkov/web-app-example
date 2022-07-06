@@ -1,5 +1,12 @@
 # web-app
 
+Web app rust tauri example.
+
+* [tauri](https://tauri.app/)
+* [vue](https://vuejs.org/)
+* [vuetify](https://vuetifyjs.com/en/)
+
+
 ## Project setup
 ```
 yarn install

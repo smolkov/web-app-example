@@ -1,26 +1,70 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <v-app id="inspire">
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+    >
+      <template #prepend>
+        <v-list-item
+          two-line
+          prepend-avatar="https://randomuser.me/api/portraits/women/81.jpg"
+          title="Jane Smith"
+          subtitle="Logged in"
+        />
+      </template>
+
+      <v-divider />
+
+      <v-list
+        density="compact"
+        nav
+      >
+        <v-list-item
+          prepend-icon="mdi-home-city"
+          title="Dashboard"
+          value="home"
+          to="/"
+          router
+          exact
+        />
+        <v-list-item
+          prepend-icon="mdi-account"
+          title="Settings"
+          value="settings"
+          to="/settings"
+          router
+          exact
+        />
+        <v-list-item
+          prepend-icon="mdi-account-group-outline"
+          title="Users"
+          value="users"
+        />
+      </v-list><!--  -->
+    </v-navigation-drawer>
+
+    <v-app-bar app>
+      <v-app-bar-nav-icon @click="drawer = !drawer" />
+
+      <v-toolbar-title>Application</v-toolbar-title>
+    </v-app-bar>
+
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data: () => ({
+    drawer: null,
+    items: [
+      { title: "Dashboard", icon: "mdi-view-dashboard" },
+      { title: "Photos", icon: "mdi-image" },
+      { title: "About", icon: "mdi-help-box" },
+    ],
+  }),
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
