@@ -28,7 +28,7 @@
           exact
         />
         <v-list-item
-          prepend-icon="mdi-account"
+          prepend-icon="mdi-tune-vertical"
           title="Settings"
           value="settings"
           to="/settings"
@@ -36,9 +36,20 @@
           exact
         />
         <v-list-item
-          prepend-icon="mdi-account-group-outline"
-          title="Users"
-          value="users"
+          prepend-icon="mdi-file-tree"
+          title="File system"
+          value="filesystem"
+          to="/filesystem"
+          router
+          exact
+        />
+         <v-list-item
+          prepend-icon="mdi-collage"
+          title="Os"
+          value="os"
+          to="/os"
+          router
+          exact
         />
       </v-list><!--  -->
     </v-navigation-drawer>

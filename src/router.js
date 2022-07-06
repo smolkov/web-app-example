@@ -1,17 +1,30 @@
 import { createRouter, createWebHistory } from "vue-router";
-import TheDashboard from "./views/TheDashboard.vue";
-import TheSettings from "./views/TheSettings.vue";
+import dashboard from "./views/dashboard.vue";
+import settings from "./views/settings.vue";
+import filesystem from "./views/filesystem.vue";
+import os from "./views/operation_system.vue";
 
 export default createRouter({
   history: createWebHistory(),
   routes: [
     {
       path: "/",
-      component: TheDashboard,
+      component: dashboard,
     },
     {
       path: "/settings",
-      component: TheSettings,
+      component: settings,
     },
-  ],
+    {
+      path: "/filesystem",
+      component: filesystem,
+    },
+    {
+      path: "/os",
+      component:os,
+    },
+    {
+      path: "/os"
+    }
+],
 });
